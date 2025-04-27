@@ -19,10 +19,10 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex space-x-12 items-center">
-          <Link href="/" className="text-gray-950 hover:text-red-600">Home</Link>
-          <Link href="/listings" className="text-gray-950 hover:text-red-600">Properties</Link>
-          <Link href="/favorites" className="text-gray-950 hover:text-red-600">Favorites</Link>
-          <Link href="/about" className="text-gray-950 hover:text-red-600">About Us</Link>
+          <Link href="/" className=" font-medium  text-gray-950 hover:text-red-600">Home</Link>
+          <Link href="/listings" className="font-medium  text-gray-950 hover:text-red-600">Properties</Link>
+          <Link href="/favorites" className="font-medium  text-gray-950 hover:text-red-600">Favorites</Link>
+          <Link href="/about" className="font-medium  text-gray-950 hover:text-red-600">About Us</Link>
         </div>
 
         <div className="flex items-center space-x-4 md:space-x-6">
