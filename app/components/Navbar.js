@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-transparent shadow-md fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-black/20 shadow-md fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between items-center py-4">
         
         <Link href="/" className="text-3xl font-extrabold text-red-600 tracking-wide">
@@ -19,10 +19,10 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex space-x-12 items-center">
-          <Link href="/" className="   text-white hover:text-red-600">Home</Link>
-          <Link href="/listings" className="  text-white hover:text-red-600">Properties</Link>
-          <Link href="/favorites" className="  text-white hover:text-red-600">Favorites</Link>
-          <Link href="/about" className="  text-white hover:text-red-600">About Us</Link>
+          <Link href="/" className="  font-medium text-white hover:text-red-600">Home</Link>
+          <Link href="/listings" className=" font-medium text-white hover:text-red-600">Properties</Link>
+          <Link href="/favorites" className=" font-medium text-white hover:text-red-600">Favorites</Link>
+          <Link href="/about" className=" font-medium text-white hover:text-red-600">About Us</Link>
         </div>
 
         <div className="flex items-center space-x-4 md:space-x-6">
@@ -38,7 +38,7 @@ export default function Navbar() {
          
           <div className="md:hidden">
             <button onClick={toggleMenu}>
-              <Menu size={28} />
+              <Menu size={28} className='text-white'/>
             </button>
           </div>
         </div>
