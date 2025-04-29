@@ -10,19 +10,19 @@ import { FaArrowRight } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "Parthraj Singh",
+    name: "Shourya Pratap",
     role: "Home Buyer",
     testimonial:
       "HomeHunt made my property search effortless. I found my dream home within just a few days. The listings were detailed and accurate, and the support team was fantastic!",
-    image: "assets/parth.jpeg",
+    image: "assets/shourya.jpeg",
   },
   {
     id: 2,
-    name: "Shourya Pratap",
+    name: "Parthraj Singh",
     role: "Seller",
     testimonial:
       "Selling my house was smooth and stress-free thanks to HomeHunt. The platform gave my property great exposure, and I received multiple offers within a week!",
-    image: "assets/shourya.jpeg",
+    image: "assets/parth.jpeg",
   },
   {
     id: 3,
