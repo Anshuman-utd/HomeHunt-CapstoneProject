@@ -5,6 +5,7 @@ import Testimonials from "./components/Testimonials";
 import WhyChooseUs from "./components/WhyChooseUs";
 import HowItWorks from "./components/HowItWorks";
 import AboutPreview from "./components/AboutPreview";
+import PropertiesPreview from "./components/PropertyPreview";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <WhyChooseUs/>
       <AboutPreview/>
       <HowItWorks/>
+      <PropertiesPreview/>
       <Testimonials/>
     </div>
   );

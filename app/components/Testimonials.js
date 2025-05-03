@@ -98,10 +98,9 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* Share Your Experience Button */}
         <div className="flex justify-center mt-10">
           <a
-            href="mailto:your-email@example.com" // <-- same as hero section contact button
+            href="mailto:your-email@example.com"
             className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white  py-3 px-6 rounded-xl transition-all"
           >
             Share Your Experience
