@@ -1,0 +1,122 @@
+[
+    {
+      "id": 1,
+      "title": "Beachfront Villa in Goa",
+      "location": "Candolim Beach, Goa",
+      "price": 2500000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 4500,
+      "type": "Villa",
+      "status": "For buy",
+      "image": "/assets/properties/villa-goa.jpg",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Cozy House in Manali",
+      "location": "Old Manali, Himachal Pradesh",
+      "price": 15000000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 3500,
+      "type": "House",
+      "status": "For buy",
+      "image": "/assets/properties/house-manali.jpg",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Luxury Villa in Jaipur",
+      "location": "Amer, Jaipur",
+      "price": 30000000,
+      "bedrooms": 5,
+      "bathrooms": 5,
+      "area": 7000,
+      "type": "Villa",
+      "status": "For buy",
+      "image": "/assets/properties/villa-jaipur.jpg",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Urban Apartment in Mumbai",
+      "location": "Bandra West, Mumbai",
+      "price": 1800000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": 1500,
+      "type": "Apartment",
+      "status": "For rent",
+      "image": "/assets/properties/apartment-mumbai.jpg",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Countryside House in Ooty",
+      "location": "Ooty, Tamil Nadu",
+      "price": 1200000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 3200,
+      "type": "House",
+      "status": "For buy",
+      "image": "/assets/properties/house-ooty.jpg",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Luxury Villa in Ahmedabad",
+      "location": "Satellite, Ahmedabad",
+      "price": 20000000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 3997,
+      "type": "Villa",
+      "status": "For buy",
+      "image": "/assets/properties/villa-ahmedabad.jpg",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Villa in Surat",
+      "location": "Vesu, Surat",
+      "price": 18000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 3700,
+      "type": "Villa",
+      "status": "For rent",
+      "image": "/assets/properties/villa-surat.jpg",
+      "featured": true
+    }
+    ,
+    {
+      "id": 8,
+      "title": "Luxury Apartment in Bangalore",
+      "location": "Koramangala, Bangalore",
+      "price": 12000000,
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 2500,
+      "type": "Apartment",
+      "status": "For buy",
+      "image": "/assets/properties/apartment-bangalore.jpg",
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Beach House in Kerala",
+      "location": "Varkala, Kerala",
+      "price": 5000000,
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 4000,
+      "type": "House",
+      "status": "For buy",
+      "image": "/assets/properties/house-kerala.jpg",
+      "featured": false
+    }
+
+  ]
+  

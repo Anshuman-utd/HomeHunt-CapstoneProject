@@ -6,13 +6,16 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import HowItWorks from "./components/HowItWorks";
 import AboutPreview from "./components/AboutPreview";
 import PropertiesPreview from "./components/PropertyPreview";
+import FeaturedProperties from "./components/FeaturedProperties";
 
 export default function Home() {
+
   return (
     <div>
       <Navbar/>
       <Hero/>
       <WhyChooseUs/>
+      <FeaturedProperties/>
       <AboutPreview/>
       <HowItWorks/>
       <PropertiesPreview/>
