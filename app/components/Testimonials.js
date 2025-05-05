@@ -100,7 +100,7 @@ const Testimonials = () => {
         </Swiper>
         <div className="flex justify-center mt-10">
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:support@homehunt.com"
             className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white  py-3 px-6 rounded-xl transition-all"
           >
             Share Your Experience

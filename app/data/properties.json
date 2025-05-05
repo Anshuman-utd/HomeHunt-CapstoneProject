@@ -9,7 +9,7 @@
       "area": 4500,
       "type": "Villa",
       "status": "For buy",
-      "image": "/assets/properties/villa-goa.jpg",
+      "image": "assets/beach-goa.avif",
       "featured": true
     },
     {
@@ -22,7 +22,7 @@
       "area": 3500,
       "type": "House",
       "status": "For buy",
-      "image": "/assets/properties/house-manali.jpg",
+      "image": "assets/house-manali.avif",
       "featured": true
     },
     {
@@ -35,7 +35,7 @@
       "area": 7000,
       "type": "Villa",
       "status": "For buy",
-      "image": "/assets/properties/villa-jaipur.jpg",
+      "image": "assets/villa-jaipur.avif",
       "featured": true
     },
     {
@@ -48,7 +48,7 @@
       "area": 1500,
       "type": "Apartment",
       "status": "For rent",
-      "image": "/assets/properties/apartment-mumbai.jpg",
+      "image": "assets/aprtment-mumbai.avif",
       "featured": false
     },
     {
@@ -61,8 +61,8 @@
       "area": 3200,
       "type": "House",
       "status": "For buy",
-      "image": "/assets/properties/house-ooty.jpg",
-      "featured": false
+      "image": "assets/house-ooty.avif",
+      "featured": true
     },
     {
       "id": 6,
@@ -74,8 +74,8 @@
       "area": 3997,
       "type": "Villa",
       "status": "For buy",
-      "image": "/assets/properties/villa-ahmedabad.jpg",
-      "featured": true
+      "image": "assets/villa-ahemdabad.avif",
+      "featured": false
     },
     {
       "id": 7,
@@ -87,8 +87,8 @@
       "area": 3700,
       "type": "Villa",
       "status": "For rent",
-      "image": "/assets/properties/villa-surat.jpg",
-      "featured": true
+      "image": "assets/villa-surat.avif",
+      "featured": false
     }
     ,
     {
@@ -101,7 +101,7 @@
       "area": 2500,
       "type": "Apartment",
       "status": "For buy",
-      "image": "/assets/properties/apartment-bangalore.jpg",
+      "image": "assets/apartment-bangalore.avif",
       "featured": true
     },
     {
@@ -114,8 +114,8 @@
       "area": 4000,
       "type": "House",
       "status": "For buy",
-      "image": "/assets/properties/house-kerala.jpg",
-      "featured": false
+      "image": "assets/beach-kerala.avif",
+      "featured": true
     }
 
   ]

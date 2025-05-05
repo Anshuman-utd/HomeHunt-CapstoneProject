@@ -7,6 +7,7 @@ import HowItWorks from "./components/HowItWorks";
 import AboutPreview from "./components/AboutPreview";
 import PropertiesPreview from "./components/PropertyPreview";
 import FeaturedProperties from "./components/FeaturedProperties";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -20,6 +21,7 @@ export default function Home() {
       <HowItWorks/>
       <PropertiesPreview/>
       <Testimonials/>
+      <Footer/>
     </div>
   );
 }

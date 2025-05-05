@@ -25,7 +25,7 @@ const Hero = () => {
             </button>
           </Link>
 
-          <Link href="mailto:homehuntrealestate@email.com" passHref>
+          <Link href="mailto:support@homehunt.com" passHref>
             <button className="px-5 py-2 md:px-6 md:py-3 border border-white hover:cursor-pointer rounded-md shadow-md text-white">
               Contact Us
             </button>

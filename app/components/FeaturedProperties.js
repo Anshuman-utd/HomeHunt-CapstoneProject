@@ -6,6 +6,8 @@ import React, { useState } from "react";
 import propertiesData from "../data/properties"; // ✅ default import
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt } from "react-icons/fa";
 import { Heart } from "lucide-react";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const FeaturedProperties = () => {
   const featured = propertiesData.filter((property) => property.featured);
@@ -40,7 +42,7 @@ const FeaturedProperties = () => {
             className={`px-4 py-2 rounded-full border font-medium ${
               selectedType === type
                 ? "bg-red-600 text-white"
-                : "bg-white text-red-600 border-red-600"
+                : "bg-white text-gray-600 border-white shadow-md"
             } transition duration-300`}
           >
             {type}s
@@ -107,6 +109,15 @@ const FeaturedProperties = () => {
           </div>
         ))}
       </div>
+      <div className="flex justify-center items-center mt-10 text-center">
+          <Link
+            href="/listings"
+            className="flex text-center items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white  py-3 px-6 rounded-xl transition-all"
+          >
+            Browse Properties
+            <FaArrowRight />
+          </Link>
+        </div>
     </div>
   );
 };
