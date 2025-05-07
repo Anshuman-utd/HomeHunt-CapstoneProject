@@ -1,4 +1,4 @@
-// components/Footer.jsx
+
 import {  MapPin, Phone, Mail, Send } from "lucide-react";
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <footer className="bg-white text-black border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
-        {/* Logo & About */}
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <h1 className="text-3xl font-bold text-red-600">HomeHunt</h1>
@@ -22,7 +21,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Quick Links */}
+
         <div>
           <h3 className="font-semibold mb-3 text-gray-800">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -34,7 +33,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
+
         <div>
           <h3 className="font-semibold mb-3 text-gray-800">Support</h3>
           <ul className="space-y-2 text-sm">
@@ -45,7 +44,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
+
         <div>
           <h3 className="font-semibold mb-3 text-gray-800">Contact Us</h3>
           <ul className="space-y-2 text-sm text-gray-600">
@@ -55,7 +54,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Newsletter */}
+
         <div className="md:col-span-2">
           <h3 className="font-semibold mb-3 text-gray-800">Stay Updated</h3>
           <p className="text-sm text-gray-600 mb-4">Subscribe to our newsletter for the latest property listings and real estate insights.</p>

@@ -51,15 +51,15 @@ const WhyChooseUs = () => {
           Why Choose Us
         </h2>
         
-        {/* Small Red Underline */}
+        
         <div className="w-24 h-1 bg-red-600 mx-auto mb-4 rounded"></div>
         
-        {/* Subtitle */}
+        
         <p className="text-gray-600 mb-12 text-base md:text-lg">
           Discover the HomeHunt advantage and why so many trust us with their real estate journey.
         </p>
 
-        {/* Feature Cards */}
+      
         <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {features.map((feature) => (
             <div key={feature.id} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all">

@@ -6,7 +6,6 @@ const AboutPreview = () => {
   return (
     <section className="bg-gray-50 py-12">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
-        {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -18,7 +17,6 @@ const AboutPreview = () => {
 
         </motion.div>
 
-        {/* Text */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}

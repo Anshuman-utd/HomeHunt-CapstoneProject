@@ -28,20 +28,19 @@ const HowItWorks = () => {
     <section className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6 text-center">
 
-        {/* Heading */}
+
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
           How It Works
         </h2>
 
-        {/* Red Underline */}
         <div className="w-24 h-1 bg-red-600 mx-auto mb-4 rounded"></div>
 
-        {/* Subtitle */}
+        
         <p className="text-gray-600 mb-12 text-base md:text-lg">
           Finding your dream home with HomeHunt is simple and straightforward.
         </p>
 
-        {/* Steps Cards */}
+       
         <div className="grid gap-8 grid-cols-1 md:grid-cols-3">
           {steps.map((step) => (
             <div key={step.id} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all">

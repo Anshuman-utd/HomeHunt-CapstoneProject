@@ -1,9 +1,8 @@
-// app/components/FeaturedProperties.js
 
-"use client"; // (if using Next.js App Router)
+"use client"; 
 
 import React, { useState } from "react";
-import propertiesData from "../data/properties"; // ✅ default import
+import propertiesData from "../data/properties"; // 
 import { FaBed, FaBath, FaRulerCombined, FaMapMarkerAlt } from "react-icons/fa";
 import { Heart } from "lucide-react";
 import Link from "next/link";
@@ -21,19 +20,19 @@ const FeaturedProperties = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-12 px-4">
-      {/* Heading */}
+
       <div className="text-center mb-8 relative">
         <h2 className="text-3xl md:text-4xl font-bold text-black-600 mb-2 text-center">
         Featured Properties 
         </h2>
-        {/* Small Red Underline */}
+
         <div className="w-29 h-1 bg-red-600 mx-auto mb-4 rounded"></div>
         <p className="text-gray-600 mb-12 text-base md:text-lg">
         Discover our handpicked selection of premium properties designed to match your lifestyle needs
         </p>
       </div>
 
-      {/* Filter Buttons */}
+   
       <div className="flex justify-center gap-4 mb-8 flex-wrap">
         {["All", "Apartment", "Villa", "House"].map((type) => (
           <button
