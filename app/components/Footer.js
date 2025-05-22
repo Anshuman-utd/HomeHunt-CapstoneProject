@@ -1,4 +1,4 @@
-
+"use client"; 
 import {  MapPin, Phone, Mail, Send } from "lucide-react";
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
 
