@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Mail, Lock } from "lucide-react";
-import { motion } from 'framer-motion';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
