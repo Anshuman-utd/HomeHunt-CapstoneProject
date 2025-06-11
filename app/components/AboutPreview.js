@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const AboutPreview = () => {
   return (
-    <section className="bg-gray-50 py-12">
+    <section className=" py-12">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

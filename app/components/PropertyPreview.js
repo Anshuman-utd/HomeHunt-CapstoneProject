@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const PropertiesPreview = () => {
   return (
-    <section className="bg-[#f6f6f6] py-20 px-4 md:px-16">
+    <section className=" py-20 px-4 md:px-16">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

@@ -15,10 +15,9 @@ export default function Home() {
     <div>
       <Navbar/>
       <Hero/>
-      <WhyChooseUs/>
-      <FeaturedProperties/>
-      <AboutPreview/>
       <HowItWorks/>
+      <AboutPreview/>
+      <FeaturedProperties/>
       <PropertiesPreview/>
       <Testimonials/>
       <Footer/>

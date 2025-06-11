@@ -28,26 +28,39 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="bg-red-50 py-16">
-        <div className="container mx-auto max-w-4xl text-center px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-red-600 mb-4"
-          >
-            Our Mission
-          </motion.h2>
-          <p className="text-gray-700 leading-relaxed">
-            At HomeHunt, our mission is to simplify the real estate journey for
-            buyers, sellers, and renters alike. We believe finding the perfect
-            home should be easy, transparent, and enjoyable. With a curated
-            selection of properties, smart search tools, and a dedicated team,
-            we aim to help every client feel confident in their property
-            decisions.
-          </p>
-        </div>
-      </div>
+      <div className=" py-16">
+  <div className="container mx-auto max-w-4xl px-4 text-center">
+    <motion.h2
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-3xl md:text-4xl font-bold   mb-2"
+    >
+      Our Mission
+    </motion.h2>
+    
+    {/* Red underline */}
+    <div className="w-16 h-1 bg-red-600 mx-auto mb-6 rounded"></div>
+
+    {/* Mission Card */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto"
+    >
+      <p className="text-gray-700 text-lg leading-relaxed">
+        At <span className="font-semibold text-red-600">HomeHunt</span>, our mission is to simplify the real estate journey for buyers, sellers, and renters alike. 
+        We believe finding the perfect home should be easy, transparent, and enjoyable. 
+        With a curated selection of properties, intelligent search tools, and a passionate team, 
+        we empower every client to make confident, informed property decisions with ease.
+      </p>
+    </motion.div>
+  </div>
+</div>
+
+      <WhyChooseUs/>
       <div className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold  mb-2">
@@ -60,7 +73,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="shadow-md rounded-xl  p-6 text-center">
+            <div className="shadow-lg rounded-xl  p-6 text-center">
               <img
                 src="/assets/anshuMANN.jpg"
                 alt="Anshuman Mehta"
@@ -74,7 +87,7 @@ export default function AboutPage() {
                 Passionate about simplifying real estate with tech innovation
                 and user-first design.
               </p>
-              <div className="flex justify-center gap-4 mt-4 text-red-600 text-xl">
+              <div className="flex justify-center gap-4 mt-4 text-red-600 text-2xl">
                 <i className="ri-linkedin-box-fill"></i>
                 <i className="ri-twitter-fill"></i>
                 <i className="ri-instagram-fill"></i>
@@ -82,7 +95,7 @@ export default function AboutPage() {
             </div>
 
             {/* Card 2 */}
-            <div className="shadow-md rounded-xl  p-6 text-center">
+            <div className="shadow-lg rounded-xl  p-6 text-center">
               <img
                 src="/assets/tanishk.jpeg"
                 alt="Karn Gupta"
@@ -96,14 +109,14 @@ export default function AboutPage() {
                 Building seamless frontend experiences and powerful backend
                 solutions for HomeHunt.
               </p>
-              <div className="flex justify-center gap-4 mt-4 text-red-600 text-xl">
+              <div className="flex justify-center gap-4 mt-4 text-red-600 text-2xl">
                 <i className="ri-linkedin-box-fill"></i>
                 <i className="ri-twitter-fill"></i>
               </div>
             </div>
 
             {/* Card 3 */}
-            <div className="shadow-md rounded-xl  p-6 text-center">
+            <div className="shadow-lg rounded-xl  p-6 text-center">
               <img
                 src="/assets/aman.jpeg"
                 alt="Priya Sharma"
@@ -117,7 +130,7 @@ export default function AboutPage() {
                 Spreading the HomeHunt story and connecting with property
                 seekers everywhere.
               </p>
-              <div className="flex justify-center gap-4 mt-4 text-red-600 text-xl">
+              <div className="flex justify-center gap-4 mt-4 text-red-600 text-2xl">
                 <i className="ri-instagram-fill"></i>
                 <i className="ri-twitter-fill"></i>
               </div>
@@ -125,7 +138,6 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <WhyChooseUs/>
 
       <div className="py-16 ">
         <div className="container mx-auto px-2 text-center">
@@ -143,19 +155,19 @@ export default function AboutPage() {
             estate discovery. Here are some milestones we're proud of:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-9">
-            <div className="bg-white rounded-lg p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-lg">
               <h3 className="text-xl font-bold text-red-600">10K+ Users</h3>
               <p className="text-gray-600 mt-2">
                 Trusted by thousands of property seekers across India.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-lg">
               <h3 className="text-xl font-bold text-red-600">500+ Listings</h3>
               <p className="text-gray-600 mt-2">
                 Curated and verified properties updated regularly.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md">
+            <div className="bg-white rounded-lg p-6 shadow-lg">
               <h3 className="text-xl font-bold text-red-600">Top Rated UX</h3>
               <p className="text-gray-600 mt-2">
                 Praised for intuitive design and user-friendliness.
