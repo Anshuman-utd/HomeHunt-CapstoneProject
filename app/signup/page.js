@@ -1,34 +1,58 @@
-"use client"; 
+"use client";
 
+import { useState } from "react";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, UserPlus } from "lucide-react";
-import { motion } from "framer-motion";
+
+import { auth } from "../firebase/firebase"; // adjust this if needed
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function SignupPage() {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const router = useRouter();
+
+  // This line is removed as it is not needed here
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: fullname,
+      });
+      router.push("/"); // Redirect to home
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-red-50">
       <Navbar />
-    <div className="flex items-center justify-center min-h-[100vh]">
+      <div className="flex items-center justify-center min-h-[100vh]">
         <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
-          <h2 className="text-3xl font-bold text-center text-red-600">
-            HomeHunt
-          </h2>
+          <h2 className="text-3xl font-bold text-center text-red-600">HomeHunt</h2>
           <div className="text-center space-y-1">
             <h3 className="text-2xl font-semibold">Create an account</h3>
-            <p className="text-sm text-gray-600">
-              Join our community of property enthusiasts
-            </p>
+            <p className="text-sm text-gray-600">Join our community of property enthusiasts</p>
           </div>
 
-          <form className="mt-6 space-y-6">
+          {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+
+          <form onSubmit={handleSignup} className="mt-6 space-y-6">
             <div className="space-y-4">
+              {/* Full Name */}
               <div>
-                <label
-                  htmlFor="fullname"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="fullname" className="block text-sm font-medium text-gray-700">
                   Full Name
                 </label>
                 <div className="relative mt-1">
@@ -41,16 +65,16 @@ export default function SignupPage() {
                     type="text"
                     placeholder="Enter your full name"
                     required
+                    value={fullname}
+                    onChange={(e) => setFullname(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                   />
                 </div>
               </div>
 
+              {/* Email */}
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
                 </label>
                 <div className="relative mt-1">
@@ -63,16 +87,16 @@ export default function SignupPage() {
                     type="email"
                     placeholder="name@company.com"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                   />
                 </div>
               </div>
 
+              {/* Password */}
               <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <div className="relative mt-1">
@@ -85,12 +109,15 @@ export default function SignupPage() {
                     type="password"
                     placeholder="Enter your password"
                     required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                   />
                 </div>
               </div>
             </div>
 
+            {/* Submit Button */}
             <div>
               <button
                 type="submit"
@@ -102,6 +129,7 @@ export default function SignupPage() {
             </div>
           </form>
 
+          {/* Redirect to Login */}
           <div className="flex flex-col items-center mt-6 space-y-2">
             <p className="text-sm text-gray-600">Already have an account?</p>
             <Link
@@ -112,8 +140,8 @@ export default function SignupPage() {
             </Link>
           </div>
         </div>
-    </div>
-    <Footer/>
+      </div>
+      <Footer />
     </div>
   );
 }

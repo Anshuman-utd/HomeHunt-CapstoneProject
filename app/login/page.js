@@ -1,15 +1,37 @@
-"use client"; 
+"use client";
 
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Mail, Lock } from "lucide-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebase"; // adjust path if needed
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push("/"); // redirect to home on successful login
+    } catch (err) {
+      setError("Invalid email or password.");
+      console.error(err.message);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-red-50">
       <Navbar />
-    <div className="flex flex-1 items-center justify-center min-h-[100vh] ">
+      <div className="flex flex-1 items-center justify-center min-h-[100vh]">
         <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
           <h2 className="text-3xl font-bold text-center text-red-600">
             HomeHunt
@@ -21,13 +43,10 @@ export default function LoginPage() {
             </p>
           </div>
 
-          <form className="mt-6 space-y-6">
+          <form onSubmit={handleLogin} className="mt-6 space-y-6">
             <div className="space-y-4">
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
                 </label>
                 <div className="relative mt-1">
@@ -39,6 +58,8 @@ export default function LoginPage() {
                     name="email"
                     type="email"
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                   />
@@ -46,10 +67,7 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <div className="relative mt-1">
@@ -61,12 +79,16 @@ export default function LoginPage() {
                     name="password"
                     type="password"
                     placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required
                     className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
                   />
                 </div>
               </div>
             </div>
+
+            {error && <p className="text-red-500 text-sm">{error}</p>}
 
             <div>
               <button
@@ -88,8 +110,8 @@ export default function LoginPage() {
             </Link>
           </div>
         </div>
+      </div>
+      <Footer />
     </div>
-    <Footer/>
-  </div>
   );
 }
