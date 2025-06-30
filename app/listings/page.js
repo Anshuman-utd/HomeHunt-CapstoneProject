@@ -6,15 +6,51 @@ import { FaMapMarkerAlt, FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
 import { Heart } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { auth } from "../firebase/firebase";
 
 export default function ListingsPage() {
   const [search, setSearch] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [filteredProperties, setFilteredProperties] = useState(propertiesData);
   const [currentPage, setCurrentPage] = useState(1);
+  const [favorites, setFavorites] = useState([]);
+  const [user, setUser] = useState(null);
 
   const propertiesPerPage = 9;
   const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+
+  // Auth state
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+      if (!currentUser) {
+        setFavorites([]); // Reset hearts when logged out
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // LocalStorage
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      setFavorites(JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  const handleFavoriteToggle = (propertyId) => {
+    if (!user) {
+      alert("Please log in to add properties to favorites.");
+      return;
+    }
+
+    const updatedFavorites = favorites.includes(propertyId)
+      ? favorites.filter((id) => id !== propertyId)
+      : [...favorites, propertyId];
+
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   useEffect(() => {
     let filtered = propertiesData.filter((property) =>
@@ -28,7 +64,7 @@ export default function ListingsPage() {
     }
 
     setFilteredProperties(filtered);
-    setCurrentPage(1); // Reset to first page when search or sort changes
+    setCurrentPage(1); // Reset page on filter
   }, [search, sortOption]);
 
   const indexOfLast = currentPage * propertiesPerPage;
@@ -46,11 +82,11 @@ export default function ListingsPage() {
       <Navbar />
       <div className="bg-gray-50 py-25 px-4">
         <div className="max-w-7xl mx-auto space-y-6">
-          <h1 className="text-5xl md:text-5xl font-bold mb-12 text-center">
+          <h1 className="text-5xl font-bold mb-12 text-center">
             Search For Properties here
           </h1>
 
-          {/* Search and Sort */}
+          {/* Search + Sort */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <input
               type="text"
@@ -71,7 +107,7 @@ export default function ListingsPage() {
             </select>
           </div>
 
-          {/* Property Cards */}
+          {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
             {currentProperties.map((property) => (
               <div
@@ -90,8 +126,13 @@ export default function ListingsPage() {
                   <span className="absolute top-10 left-3 bg-green-600 text-white text-xs px-2 py-1 rounded">
                     {property.status}
                   </span>
-                  <button className="absolute top-3 right-3 bg-white text-black shadow-lg p-2 rounded-full hover:bg-red-600 hover:text-white transition">
-                    <Heart />
+                  <button
+                    onClick={() => handleFavoriteToggle(property.id)}
+                    className={`absolute top-3 right-3 bg-white text-black shadow-lg p-2 rounded-full hover:bg-red-600 hover:text-white transition ${
+                      favorites.includes(property.id) ? "text-red-600" : ""
+                    }`}
+                  >
+                    <Heart fill={favorites.includes(property.id) ? "currentColor" : "none"} />
                   </button>
                 </div>
 
@@ -126,7 +167,7 @@ export default function ListingsPage() {
             ))}
           </div>
 
-          {/* Pagination Controls */}
+          {/* Pagination */}
           <div className="flex justify-center items-center gap-4 mt-8">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
