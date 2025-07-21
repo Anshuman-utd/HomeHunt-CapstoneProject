@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Mail, Lock } from "lucide-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase/firebase"; // adjust path if needed
+import { auth } from "../firebase/firebase"; 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -21,7 +21,7 @@ export default function LoginPage() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      router.push("/"); // redirect to home on successful login
+      router.push("/"); 
     } catch (err) {
       setError("Invalid email or password.");
       console.error(err.message);

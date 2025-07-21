@@ -14,16 +14,13 @@ const FeaturedProperties = () => {
   const [favorites, setFavorites] = useState([]);
   const [user, setUser] = useState(null);
 
-  // Check Firebase auth state
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
   
-      // If user logs out, reset favorites
       if (!currentUser) {
         setFavorites([]);
       } else {
-        // On login, try loading favorites from localStorage
         const storedFavorites = localStorage.getItem("favorites");
         if (storedFavorites) {
           setFavorites(JSON.parse(storedFavorites));
@@ -35,7 +32,6 @@ const FeaturedProperties = () => {
   }, []);
   
 
-  // Load favorites from localStorage
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
     if (storedFavorites) {

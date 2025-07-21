@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, UserPlus } from "lucide-react";
 
-import { auth } from "../firebase/firebase"; // adjust this if needed
+import { auth } from "../firebase/firebase"; 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -18,7 +18,7 @@ export default function SignupPage() {
 
   const router = useRouter();
 
-  // This line is removed as it is not needed here
+  
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -29,7 +29,7 @@ export default function SignupPage() {
       await updateProfile(userCredential.user, {
         displayName: fullname,
       });
-      router.push("/"); // Redirect to home
+      router.push("/"); 
     } catch (err) {
       setError(err.message);
     }
@@ -50,7 +50,6 @@ export default function SignupPage() {
 
           <form onSubmit={handleSignup} className="mt-6 space-y-6">
             <div className="space-y-4">
-              {/* Full Name */}
               <div>
                 <label htmlFor="fullname" className="block text-sm font-medium text-gray-700">
                   Full Name
@@ -72,7 +71,7 @@ export default function SignupPage() {
                 </div>
               </div>
 
-              {/* Email */}
+
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
@@ -117,7 +116,6 @@ export default function SignupPage() {
               </div>
             </div>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"
@@ -129,7 +127,6 @@ export default function SignupPage() {
             </div>
           </form>
 
-          {/* Redirect to Login */}
           <div className="flex flex-col items-center mt-6 space-y-2">
             <p className="text-sm text-gray-600">Already have an account?</p>
             <Link

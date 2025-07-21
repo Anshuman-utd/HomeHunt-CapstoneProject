@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, User } from "lucide-react";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase/firebase"; // adjust path if needed
+import { auth } from "../firebase/firebase"; 
 import { signOut } from "firebase/auth";
 
 export default function Navbar() {

@@ -19,12 +19,12 @@ export default function ListingsPage() {
   const propertiesPerPage = 9;
   const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
 
-  // Auth state
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
       if (!currentUser) {
-        setFavorites([]); // Reset hearts when logged out
+        setFavorites([]); 
       }
     });
     return () => unsubscribe();
